@@ -10,17 +10,6 @@
       margin: 0;
     }
 
-    header {
-      background-color: #0074D9;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-
-    h1 {
-      margin: 0;
-    }
-
     .container {
       max-width: 1000px;
       margin: auto;
@@ -50,59 +39,47 @@
       border-radius: 5px;
       text-decoration: none;
     }
-
-    footer {
-      text-align: center;
-      background-color: #222;
-      color: white;
-      padding: 20px;
-      margin-top: 50px;
-    }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Tout Parcourir</h1>
-  </header>
+  <?php include('header.html'); ?>
 
   <div class="container">
 
     <div class="categorie">
       <h2>🏠 Immobilier résidentiel</h2>
       <p>Maisons, appartements, duplex, condos, etc.</p>
-      <a href="residentiel.html">Voir les biens</a>
+      <a href="residentiel.php">Voir les biens</a>
     </div>
 
     <div class="categorie">
       <h2>🏢 Immobilier commercial</h2>
       <p>Bureaux, commerces, hôtels, restaurants, hôpitaux, etc.</p>
-      <a href="commercial.html">Voir les biens</a>
+      <a href="commercial.php">Voir les biens</a>
     </div>
 
     <div class="categorie">
       <h2>🌾 Terrains</h2>
       <p>Terrains vacants, agricoles, boisés, etc.</p>
-      <a href="terrain.html">Voir les biens</a>
+      <a href="terrain.php">Voir les biens</a>
     </div>
 
     <div class="categorie">
       <h2>🏡 Appartements à louer</h2>
       <p>Locations de courte ou longue durée</p>
-      <a href="locations.html">Voir les biens</a>
+      <a href="locations.php">Voir les biens</a>
     </div>
 
     <div class="categorie">
       <h2>🔨 Vente par enchère</h2>
       <p>Propriétés en vente au plus offrant</p>
-      <a href="encheres.html">Voir les enchères</a>
+      <a href="encheres.php">Voir les enchères</a>
     </div>
 
   </div>
 
-  <footer>
-    Omnes Immobilier - © 2025 - Tous droits réservés
-  </footer>
+  <?php include('footer.html'); ?>
 
 </body>
 </html>

@@ -107,12 +107,12 @@
     <img src="images/logo.png" alt="Logo Omnes">
   </header>
 
-  <nav>
-    <a href="accueil.html">Accueil</a>
-    <a href="parcourir.html">Tout Parcourir</a>
-    <a href="recherche.html">Recherche</a>
-    <a href="rendezvous.html">Rendez-vous</a>
-    <a href="compte.html">Votre Compte</a>
+   <nav>
+    <a href="accueil.php">Accueil</a>
+    <a href="parcourir.php">Tout Parcourir</a>
+    <a href="recherche.php">Recherche</a>
+    <a href="rendezvous.php">Rendez-vous</a>
+    <a href="compte.php">Votre Compte</a>
   </nav>
 
   <div class="content">
