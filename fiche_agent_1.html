@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Agent Jean-Pierre SEGADO</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background-color: #f5faff;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .agent-card {
+      background-color: #ffffff;
+      border: 2px solid #0074D9;
+      border-radius: 20px;
+      padding: 30px;
+      width: 95%;
+      max-width: 800px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .agent-card img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    .name {
+      font-size: 24px;
+      font-weight: bold;
+      color: #0074D9;
+    }
+
+    .role {
+      color: #d40000;
+      font-weight: bold;
+      margin: 5px 0 15px 0;
+    }
+
+    .contact {
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      margin-top: 20px;
+    }
+
+    table {
+      min-width: 800px;
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 5px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #e3f0ff;
+      font-weight: bold;
+    }
+
+    .black {
+      background-color: #000;
+    }
+
+    .white {
+      background-color: #fff;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      gap: 15px;
+    }
+
+    .buttons a {
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 10px;
+      font-weight: bold;
+      color: white;
+      background-color: #0074D9;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: background-color 0.3s;
+    }
+
+    .buttons a:hover {
+      background-color: #005aab;
+    }
+  </style>
+</head>
+<body>
+  <div class="agent-card">
+    <img src="images/agent_seg.png" alt="Agent Jean-Pierre SEGADO">
+    
+    <div class="name">Jean-Pierre SEGADO</div>
+    <div class="role">Agent Immobilier agréé</div>
+    
+    <div class="contact">
+      📞 Téléphone : +33 01 43 32 60 84<br>
+      ✉ Email : jean-pierre.segado@omnesimmobilier.fr
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <tr>
+          <th>Spécialité</th>
+          <th>Agent</th>
+          <th>Lundi<br>AM</th><th>Lundi<br>PM</th>
+          <th>Mardi<br>AM</th><th>Mardi<br>PM</th>
+          <th>Mercredi<br>AM</th><th>Mercredi<br>PM</th>
+          <th>Jeudi<br>AM</th><th>Jeudi<br>PM</th>
+          <th>Vendredi<br>AM</th><th>Vendredi<br>PM</th>
+          <th>Samedi<br>AM</th><th>Samedi<br>PM</th>
+        </tr>
+        <tr>
+          <td>Immobilier Résidentiel</td>
+          <td>Jean-Pierre SEGADO</td>
+          <td class="black"></td><td class="white"></td>
+          <td class="black"></td><td class="black"></td>
+          <td class="white"></td><td class="black"></td>
+          <td class="black"></td><td class="black"></td>
+          <td class="white"></td><td class="black"></td>
+          <td class="black"></td><td class="black"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="buttons">
+      <a href="rdv.php">Prendre un RDV</a>
+      <a href="contact_agent.php">Contacter l’agent</a>
+      <a href="cv_segadopdf.pdf">Voir son CV</a>
+    </div>
+  </div>
+</body>
+</html>
