@@ -5,4 +5,22 @@
   <title>Accueil - Omnes Immobilier</title>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+ <script>
+    $(document).ready(function(){  
+    var $carousel = $('.carousel'), 
+        $img = $('.carousel img'), 
+        indexImg = $img.length - 1,  
+        i = 0, 
+        $currentImg = $img.eq(i);  
+
+    $img.hide();   
+    $currentImg.show();
+
+    $('.next').click(function(){   
+        i++; 
+        if(i > indexImg) { i = 0; } 
+        $img.hide();
+        $currentImg = $img.eq(i);   
+        $currentImg.show();
+    });
 
