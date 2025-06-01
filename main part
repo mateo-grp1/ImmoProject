@@ -78,5 +78,34 @@
       align-items: center;
       gap: 20px;
     }
+ nav {
+      background-color: #d0e4ff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      background-color: #e4eeff;
+      color: #0074D9;
+      border: 1px solid #0074D9;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #0074D9;
+      color: white;
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
 
 
