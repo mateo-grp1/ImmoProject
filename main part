@@ -24,3 +24,21 @@
         $currentImg.show();
     });
 
+    $('.prev').click(function(){  
+        i--;  
+        if(i < 0) { i = indexImg; }
+        $img.hide();
+        $currentImg = $img.eq(i);
+        $currentImg.show();
+    });
+
+    function slideImg(){  
+        setTimeout(function(){  
+            i = (i + 1) % (indexImg + 1);
+            $img.hide();
+            $currentImg = $img.eq(i);
+            $currentImg.show();
+            slideImg();  
+        }, 4000); 
+      }  
+
