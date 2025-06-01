@@ -1,0 +1,93 @@
+<?php
+// Connexion à la base de données
+$database = "projet_piscine";
+$db_handle = mysqli_connect('localhost', 'root', '', $database);
+
+if (!$db_handle) {
+    die("Connexion échouée : " . mysqli_connect_error());
+}
+
+// Affichage du formulaire HTML
+echo '
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Recherche immobilière</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color:#f9f9f9;">
+    <h2 style="text-align:center; color:#0074D9;">Recherche dans la base de données</h2>
+    <form method="post" action="" style="text-align:center; margin-bottom: 20px;">
+        <input type="text" name="recherche" placeholder="Ex : Dupont, 12, Paris..." style="padding: 8px; width: 300px;">
+        <input type="submit" value="Rechercher" style="padding: 8px 16px;">
+    </form>
+';
+
+$recherche = isset($_POST['recherche']) ? trim(mysqli_real_escape_string($db_handle, $_POST['recherche'])) : '';
+
+if ($recherche != "") {
+    echo "<h3 style='text-align:center;'>Résultats pour : <em>$recherche</em></h3>";
+
+    $tables = ['residentiel', 'commercial', 'terrain', 'louer','rendezvous','properties','consultations','agents','admins']; // retire 'agent' si tu n'as pas cette table
+    $isNumber = is_numeric($recherche);
+    $resultatsTrouves = false;
+
+    foreach ($tables as $table) {
+        $sql = "SELECT * FROM $table";
+        $result = mysqli_query($db_handle, $sql);
+        $tableAffichee = false;
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            $match = false;
+
+            foreach ($row as $col => $val) {
+                if ($isNumber && $col == 'numero' && $val == $recherche) {
+                    $match = true;
+                    break;
+                }
+
+                if (!$isNumber && stripos($val, $recherche) !== false) {
+                    $match = true;
+                    break;
+                }
+            }
+
+            if ($match) {
+                if (!$tableAffichee) {
+                    echo "<h4 style='color:#333; text-align:center;'>Table : <span style='color:#0074D9;'>$table</span></h4>";
+                    echo "<table border='1' style='margin:auto; border-collapse:collapse; background-color:#ffffff;'>";
+                    echo "<tr style='background-color:#d0e4ff;'>";
+                    foreach ($row as $colName => $val) {
+                        echo "<th style='padding:6px;'>$colName</th>";
+                    }
+                    echo "</tr>";
+                    $tableAffichee = true;
+                    $resultatsTrouves = true;
+                }
+
+                echo "<tr>";
+                foreach ($row as $val) {
+                    if (str_starts_with($val, "/Projet_Piscine")) {
+                        echo "<td style='padding:5px;'><img src='$val' height='60'></td>";
+                    } else {
+                        echo "<td style='padding:5px;'>$val</td>";
+                    }
+                }
+                echo "</tr>";
+            }
+        }
+
+        if ($tableAffichee) {
+            echo "</table><br><br>";
+        }
+    }
+
+    if (!$resultatsTrouves) {
+        echo "<p style='text-align:center;'>Aucun résultat trouvé.</p>";
+    }
+}
+
+echo "</body></html>";
+
+mysqli_close($db_handle);
+?>
