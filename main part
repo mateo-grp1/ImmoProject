@@ -41,4 +41,42 @@
             slideImg();  
         }, 4000); 
       }  
+  slideImg();
+    });
+  </script>
+
+
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5faff;
+    }
+
+    header {
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 2px solid #d0e4ff;
+    }
+
+    header h1 {
+      color: #0074D9;
+      font-size: 32px;
+    }
+
+    header img {
+      height: 60px;
+      margin-bottom: 20px;
+      margin-top: 5px;
+    }
+
+    .logo-texte{
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
 
