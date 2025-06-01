@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Accueil - Omnes Immobilier</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+  <script>
+    $(document).ready(function(){  
+    var $carousel = $('.carousel'), 
+        $img = $('.carousel img'), 
+        indexImg = $img.length - 1,  
+        i = 0, 
+        $currentImg = $img.eq(i);  
+
+    $img.hide();   
+    $currentImg.show();
+
+    $('.next').click(function(){   
+        i++; 
+        if(i > indexImg) { i = 0; } 
+        $img.hide();
+        $currentImg = $img.eq(i);   
+        $currentImg.show();
+    });
+
+    $('.prev').click(function(){  
+        i--;  
+        if(i < 0) { i = indexImg; }
+        $img.hide();
+        $currentImg = $img.eq(i);
+        $currentImg.show();
+    });
+
+    function slideImg(){  
+        setTimeout(function(){  
+            i = (i + 1) % (indexImg + 1);
+            $img.hide();
+            $currentImg = $img.eq(i);
+            $currentImg.show();
+            slideImg();  
+        }, 4000); 
+      }  
+
+    slideImg();
+    });
+  </script>
+
+
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5faff;
+    }
+
+    header {
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 2px solid #d0e4ff;
+    }
+
+    header h1 {
+      color: #0074D9;
+      font-size: 32px;
+    }
+
+    header img {
+      height: 60px;
+      margin-bottom: 20px;
+      margin-top: 5px;
+    }
+
+    .logo-texte{
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav {
+      background-color: #d0e4ff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      background-color: #e4eeff;
+      color: #0074D9;
+      border: 1px solid #0074D9;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #0074D9;
+      color: white;
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .event {
+      background-color: #eaf4ff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+
+    .event h2 {
+      color: #0074D9;
+    }
+
+    .carousel {
+      position: relative;
+      width: 700px;
+      height: 400px;
+      margin: auto;
+    }
+
+    .carousel img {
+      width: 700px;
+      height: 400px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: none;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .controls{
+      width : 700px;
+      margin: 20px auto;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+
+    }
+
+    .controls span{
+      cursor: pointer;
+      background-color: #0074D9;
+      color: white;
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 8px;
+      user-select: none;
+    }
+
+
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #eaeaea;
+      color: #0074D9;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<?php include('header.html'); ?>
+
+  <header>
+    <div class="logo-texte">
+      <h1><a href="index1.php">Omnes Immobilier</a></h1>
+      <img src="imagePiscine/logo.png" alt="Logo Omnes">
+    </div>
+  </header>
+
+  
+
+  <div class="content">
+
+    <div class="event">
+      <h2>🎉 Évènement de la semaine</h2>
+      <p>➡ Ce samedi, profitez d'une journée portes ouvertes dans notre nouvelle résidence à Bordeaux. Venez rencontrer nos agents et visiter des biens exclusifs !</p>
+    </div>
+
+    <div class="carousel">
+      <img src="imagePiscine/MaisonAccueil.jpg" alt="Maison 1">
+      <img src="imagePiscine/MaisonCarrousel1.png" alt="Appartement">
+      <img src="imagePiscine/MaisonAccueil.jpg" alt="Terrain">
+      <img src="imagePiscine/MaisonCarrousel1.png" alt="Appartement">
+
+    </div>
+
+    <div class="controls">
+      <span class="prev"><==</span>
+      <span class="next">==></span>
+    </div>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1312.1263852112097!2d2.298383953326512!3d48.87245770911651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fe9ff2a4959%3A0xcbb22f729bfc9ee8!2zVGjDqcOidHJlIGR1IExpZG8!5e0!3m2!1sfr!2sfr!4v1748795169992!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+  </div>
+
+  <footer>
+    Omnes Immobilier – © 2025 – contact@omnesimmobilier.fr – +33 01 23 45 67 89
+  </footer>
+
+</body>
+</html>
