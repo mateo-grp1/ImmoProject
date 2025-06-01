@@ -188,3 +188,24 @@
     </div>
   </header>
 
+  <div class="content">
+
+    <div class="event">
+      <h2>🎉 Évènement de la semaine</h2>
+      <p>➡ Ce samedi, profitez d'une journée portes ouvertes dans notre nouvelle résidence à Bordeaux. Venez rencontrer nos agents et visiter des biens exclusifs !</p>
+    </div>
+
+    <div class="carousel">
+      <img src="imagePiscine/MaisonAccueil.jpg" alt="Maison 1">
+      <img src="imagePiscine/MaisonCarrousel1.png" alt="Appartement">
+      <img src="imagePiscine/MaisonAccueil.jpg" alt="Terrain">
+      <img src="imagePiscine/MaisonCarrousel1.png" alt="Appartement">
+
+    </div>
+
+    <div class="controls">
+      <span class="prev"><==</span>
+      <span class="next">==></span>
+    </div>
+
+
