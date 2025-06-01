@@ -107,5 +107,35 @@
       padding: 40px 20px;
     }
 
+ .event {
+      background-color: #eaf4ff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+
+    .event h2 {
+      color: #0074D9;
+    }
+
+    .carousel {
+      position: relative;
+      width: 700px;
+      height: 400px;
+      margin: auto;
+    }
+
+    .carousel img {
+      width: 700px;
+      height: 400px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: none;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
 
 
