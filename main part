@@ -168,4 +168,23 @@
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
+ footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #eaeaea;
+      color: #0074D9;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<?php include('header.html'); ?>
+
+  <header>
+    <div class="logo-texte">
+      <h1><a href="index1.php">Omnes Immobilier</a></h1>
+      <img src="imagePiscine/logo.png" alt="Logo Omnes">
+    </div>
+  </header>
 
